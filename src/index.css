@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+/* ================= MARQUEE (DEFAULT - DESKTOP) ================= */
+
+@layer utilities {
+
+  /* Default font for entire website */
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: black; /* paragraph text color */
+}
+
+/* Headings font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  color: rgba(11, 31, 59, 0.8); /* equivalent of bg-[#0B1F3B]/80 */
+}
+
+/* ================= TEXT MARQUEE ================= */
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
+
+/* smooth continuous animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Laptop speed */
+@media (max-width: 1024px) {
+  .animate-marquee {
+    animation-duration: 16s;
+  }
+}
+
+/* Mobile speed */
+@media (max-width: 640px) {
+  .animate-marquee {
+    animation-duration: 12s;
+  }
+}
+
+
+/* ================================================= */
+/* ================= CLIENTS MARQUEE ================ */
+/* ================================================= */
+
+.clients-scroll {
+  animation: clients-scroll 35s linear infinite;
+}
+
+@keyframes clients-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Laptop */
+@media (max-width: 1024px) {
+  .clients-scroll {
+    animation-duration: 28s;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .clients-scroll {
+    animation-duration: 20s;
+  }
+}
+
+}
